@@ -1,0 +1,14 @@
+title: 				Jacob McDonald
+baseurl: 			""
+permalink: 			/:year/:month/:day/:title/
+
+email: 				jmc734@gmail.com
+twitter_username: 	jacob_mcdonald
+github_username:  	jmc734
+
+safe: 				true
+lsi: 				false
+markdown: 			kramdown
+highlighter: 		pygments
+
+exclude: 			["build_archive"]

@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+{% assign timelineYear = page.archiveYear %}
+{% assign timelineMonth = page.archiveMonth %}
+{% assign timelineDay = page.archiveDay %}
+{% include timeline.html %}
+
+<div class="contentWrapper">
+
+	{% assign archiveYear = page.archiveYear %}
+	{% assign archiveMonth = page.archiveMonth %}
+	{% assign archiveDay = page.archiveDay %}
+	{% include archive.html %}
+	
+</div>
+

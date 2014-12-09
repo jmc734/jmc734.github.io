@@ -1,0 +1,126 @@
+<header>
+	
+	<div class="timelineWrapper">
+	
+		<!-- YEARLY TIMELINE -->
+		
+		{% if timelineYear and timelineYear != '' %}
+			
+			{% assign curYear = '' %}
+			{% assign yearCount = 0 %}
+
+			{% capture yearLine %}
+			
+				<ul class="timeline" id="yearlyTimeline">
+				
+				{% for post in site.posts %}
+				
+					{% assign postYear = post.date | date: "%Y" %}
+					
+					{% if postYear != curYear %}
+					
+						<li{% if postYear == timelineYear %} class="current"{% endif %}><a href="/{{ postYear }}/">{{ postYear }}</a></li>
+						
+						{% assign curYear = postYear %}
+						{% assign yearCount = yearCount | plus:1 %}
+						
+					{% endif %}
+				
+				{% endfor %}
+				
+				</ul>
+				
+			{% endcapture %}
+			
+			{% if yearCount > 1 %}
+			
+				{{ yearLine }}
+			
+			{% endif %}
+			
+		{% endif %}
+		
+		<!-- MONTHLY TIMELINE -->
+		
+		{% if timelineYear and timelineYear != '' %}
+		
+			{% assign curMonth = '' %}
+			{% assign monthCount = 0 %}
+
+			{% capture monthLine %}
+			
+				<ul class="timeline" id="monthlyTimeline">
+				
+				{% for post in site.posts %}
+				
+					
+					{% assign postYear = post.date | date: "%Y" %}
+					{% assign postMonth = post.date | date: "%m" %}
+					
+					{% if postYear == timelineYear and postMonth != curMonth %}
+					
+						<li{% if postMonth == timelineMonth %} class="current"{% endif %}><a href="/{{ timelineYear }}/{{ postMonth }}/">{{ post.date | date: "%B" }}</a></li>
+						
+						{% assign curMonth = postMonth %}
+						{% assign monthCount = monthCount | plus:1 %}
+						
+					{% endif %}
+					
+				
+				{% endfor %}
+				
+				</ul>
+				
+			{% endcapture %}
+			
+			{% if monthCount > 0 %}
+			
+				{{ monthLine }}
+			
+			{% endif %}
+			
+		{% endif %}
+		
+		<!-- DAILY TIMELINE -->
+		
+		{% if timelineMonth and timelineMonth != '' %}
+		
+			{% assign curDay = '' %}
+			{% assign dayCount = 0 %}
+			
+			{% capture dayLine %}
+				
+				<ul class="timeline" id="dailyTimeline">
+				
+				{% for post in site.posts %}
+					
+					{% assign postYear = post.date | date: "%Y" %}
+					{% assign postMonth = post.date | date: "%m" %}
+					{% assign postDay = post.date | date: "%d" %}
+					
+					{% if postYear == timelineYear and postMonth == timelineMonth and postDay != curDay %}
+					
+						<li{% if postDay == timelineDay %} class="current"{% endif %}><a href="/{{ timelineYear }}/{{ timelineMonth }}/{{ postDay }}/">{{ postDay }}</a></li>
+
+						{% assign curDay = postDay %}
+						{% assign dayCount = dayCount | plus:1 %}
+						
+					{% endif %}
+					
+				{% endfor %}
+				
+				</ul>
+			
+			{% endcapture %}
+			
+			{% if dayCount > 0 %}
+			
+				{{ dayLine }}
+			
+			{% endif %}
+			
+		{% endif %}
+	
+	</div>
+
+</header>

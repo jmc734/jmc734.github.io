@@ -1,0 +1,182 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+
+	font-family: 'Merriweather', Georgia, Cambria, 'Times New Roman', Times, serif;
+	font-weight: 400;
+	font-size: 0.9rem;
+	color: #0C0C0C;
+
+}
+
+.nav {
+
+	display: none;
+
+}
+
+.timelineWrapper {
+
+	margin-top: 100px;
+
+}
+
+.timeline {
+
+	display: table;
+	list-style: none;
+	margin: 0 auto;
+
+}
+
+.timeline li {
+
+	display: inline-block;
+
+}
+
+.timeline li a, .archive .group .name a {
+	
+	display: block;
+	text-decoration: none;
+	padding: 0.8em 1em 0.4em;
+	margin-top: 0.4em;
+	color: #404040;
+	border-bottom: 1px solid #D8D8D8;
+	
+}
+
+.timeline li.current a {
+	
+	border-bottom: 1px solid #404040;
+	
+}
+
+.timeline li a:hover, .archive .group .name a:hover {
+
+	border-bottom: 1px solid #404040;
+
+}
+
+.contentWrapper {
+
+	width: 50%;
+	min-width: 720px;
+	margin: 0 auto;
+
+}
+
+.post .title {
+
+	margin: 100px 0;
+
+}
+
+.post .title h1, .archive article h1 {
+
+	font-family: 'Droid Sans', 'Lucida Sans', Geneva, Verdana, sans-serif;
+	font-weight: 700;
+	font-size: 3.3rem;
+	text-align: center;
+
+}
+
+.post .title h2 {
+
+	font-size: 1.6rem;
+	font-weight: 400;
+	text-align: center;
+	margin-top: 15px;
+
+}
+
+.post .content p, .post .content blockquote, .archive article p {
+
+	line-height: 1.75;
+	letter-spacing: 0.01rem;
+
+}
+
+.post .content p, .highlight {
+
+	margin-bottom: 30px;
+
+}
+
+.post .content blockquote {
+	
+	border-left: 1px solid #D8D8D8;
+	padding-left: 15px;
+	font-style: italic;
+	
+}
+
+.archive {
+
+	margin-top: 100px;
+
+}
+
+.archive .group {
+
+	margin-bottom: 100px;
+
+}
+
+.archive .group .name {
+
+	display: block;
+	border-bottom: 1px solid #D8D8D8;
+
+}
+
+.archive .group .name a {
+
+	display: inline-block;
+	margin-bottom: -1px;
+
+}
+
+.archive article {
+
+	margin: 20px 16px 40px;
+
+}
+
+.archive article h1{
+
+	font-size: 1.5rem;
+	text-align: left;
+	padding: 15px 0;
+
+}
+
+.archive article h1 a {
+
+	text-decoration: none;
+	color: #0C0C0C;
+
+}
+
+.archive article h1 a:hover {
+
+	text-decoration: underline;
+
+}
+
+.archive article h2 {
+
+	font-size: 1.1rem;
+	font-weight: 400;
+	padding: 0 0 15px;
+	
+}
+
+.archive .content code {
+
+	display: none;
+
+}

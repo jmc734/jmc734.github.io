@@ -1,0 +1,128 @@
+<div class="archive">
+
+	{% assign continue = false %}
+	{% assign currentGroup = '' %}
+	{% assign groupCount = 0 %}
+	{% assign archiveCount = 0 %}
+
+	{% for post in site.posts %}
+				
+		{% assign postYear = post.date | date: "%Y" %}
+		{% assign postMonth = post.date | date: "%m" %}
+		{% assign postDay = post.date | date: "%d" %}
+		
+		{% if archiveDay and archiveDay != '' %}
+			
+			{% if postYear == archiveYear and postMonth == archiveMonth and postDay == archiveDay %}
+			
+				{% if groupCount == 0 %}
+					
+						<section class="group">
+						
+							<div class="name"></div>
+						
+					{% endif %}
+			
+				{% assign continue = false %}
+			
+			{% else %}
+			
+				{% assign continue = true %}
+			
+			{% endif %}
+		
+		{% elsif archiveMonth and archiveMonth != '' %}
+		
+			{% if postYear == archiveYear and postMonth == archiveMonth %}
+			
+				{% if postDay != currentGroup %}
+				
+					{% if groupCount > 0 %}
+					
+						</section>
+						
+					{% endif %}
+					
+					<section class="group">
+	
+						<div class="name">
+						
+							<a href="#">{{ postDay }}</a>
+							
+						</div>
+				
+					{% assign currentGroup = postDay %}
+					{% assign groupCount = groupCount | plus:1 %}
+				
+				{% endif %}
+			
+				{% assign continue = false %}
+			
+			{% else %}
+			
+				{% assign continue = true %}
+			
+			{% endif %}
+		
+		{% else %}
+		
+			{% if postYear == archiveYear %}
+			
+				{% if postMonth != currentGroup %}
+				
+					{% if groupCount > 0 %}
+					
+						</section>
+						
+					{% endif %}
+					
+					<section class="group">
+	
+						<div class="name">
+						
+							<a href="#">{{ post.date | date: "%B" }}</a>
+							
+						</div>
+				
+					{% assign currentGroup = postMonth %}
+					{% assign groupCount = groupCount | plus:1 %}
+				
+				{% endif %}
+			
+				{% assign continue = false %}
+			
+			{% else %}
+			
+				{% assign continue = true %}
+			
+			{% endif %}
+		
+		{% endif %}
+		
+		{% if continue == false %}
+		
+			<article>
+			
+				<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+				
+				{% if post.subtitle %}
+				
+					<h2>{{ post.subtitle }}</h2>
+				
+				{% endif %}
+				
+				<section class="content">
+					{{ post.excerpt }}
+				</section>
+			
+			</article>
+			
+			{% assign archiveCount = archiveCount | plus:1 %}
+		
+		{% endif %}
+		
+	{% endfor %}
+	
+	</section>
+
+</div>

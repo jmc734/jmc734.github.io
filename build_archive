@@ -1,0 +1,36 @@
+#!/bin/bash
+
+rm -rf 201*
+
+ls --format single-column _posts | while read post; do
+
+year=$(echo "$post" | awk -F- '{print $1}')
+month=$(echo "$post" | awk -F- '{print $2}')
+day=$(echo "$post" | awk -F- '{print $3}')
+
+mkdir -p "$year/$month/$day"
+
+echo "---
+layout: archive
+archiveYear: '$year'
+---
+"  > "$year/index.html"
+
+echo "---
+layout: archive
+archiveYear: '$year'
+archiveMonth: '$month'
+---
+" > "$year/$month/index.html"
+
+echo "---
+layout: archive
+archiveYear: '$year'
+archiveMonth: '$month'
+archiveDay: '$day'
+---
+" > "$year/$month/$day/index.html"
+
+
+
+done

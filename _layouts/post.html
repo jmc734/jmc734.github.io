@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+{% assign timelineYear = page.date | date: "%Y" %}
+{% assign timelineMonth = page.date | date: "%m" %}
+{% assign timelineDay = page.date | date: "%d" %}
+{% include timeline.html %}
+
+<div class="contentWrapper">
+
+	<article class="post">
+
+		<section class="title">
+		
+			<h1>{{ page.title }}</h1>
+			
+			{% if page.subtitle != empty %}
+			
+				<h2>{{ page.subtitle }}</h2>
+			
+			{% endif %}
+			
+		</section>
+		
+		<section class="content">
+
+			{{ content }}
+			
+		</section>
+		
+	</article>
+
+</div>
+
