@@ -14,7 +14,17 @@ body {
 
 .nav {
 
-	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+}
+
+.nav .logo {
+
+	width: 200px;
+	height: 200px;
+	margin: 20px;
 
 }
 
