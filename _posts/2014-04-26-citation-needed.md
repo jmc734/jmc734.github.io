@@ -1,9 +1,9 @@
 ---
 layout: 	post
-title:		Adding [citation needed] to a LaTeX Document
+title:		"Adding [citation needed] to a LaTeX Document"
 categories:	snippet
 tags:		latex
-published:	false
+published:  false
 ---
 
 {% highlight latex linenos %}
