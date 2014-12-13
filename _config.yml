@@ -1,6 +1,7 @@
 title: 				Jacob McDonald
 baseurl: 			""
 permalink: 			/:year/:month/:day/:title/
+excerpt_separator:  "<!-- more -->"
 
 email: 				jmc734@gmail.com
 twitter_username: 	jacob_mcdonald
