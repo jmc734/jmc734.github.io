@@ -13,19 +13,38 @@ body {
 
 }
 
-.nav {
+header.main a {
 
-	position: absolute;
-	top: 0;
-	left: 0;
+    text-decoration: none;
 
 }
 
-.nav .logo {
+header.main .logo {
 
+    position: absolute;
+    top: 20px;
+    left: 20px;
 	width: 200px;
 	height: 200px;
-	margin: 20px;
+
+}
+
+header.main .social {
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    padding-top: 20px;
+
+}
+
+header.main .social a {
+
+    margin-bottom: 20px;
+    height: 40px;
+    width: 40px;
+    display: block;
 
 }
 
