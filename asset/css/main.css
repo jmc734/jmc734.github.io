@@ -233,6 +233,12 @@ td.no-border-bottom, th.no-border-bottom {
 
 }
 
+#MathJax_Message {
+
+    display: none !important;
+
+}
+
 .MathJax span {
 
     color: #0C0C0C;
