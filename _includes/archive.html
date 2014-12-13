@@ -47,7 +47,7 @@
 	
 						<div class="name">
 						
-							<a href="#">{{ postDay }}</a>
+							<a href="/{{ postYear }}/{{ postMonth }}/{{ postDay }}">{{ postDay }}</a>
 							
 						</div>
 				
@@ -80,7 +80,7 @@
 	
 						<div class="name">
 						
-							<a href="#">{{ post.date | date: "%B" }}</a>
+							<a href="/{{ postYear }}/{{ postMonth }}">{{ post.date | date: "%B" }}</a>
 							
 						</div>
 				
