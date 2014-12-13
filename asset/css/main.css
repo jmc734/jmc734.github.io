@@ -9,6 +9,7 @@ body {
 	font-weight: 400;
 	font-size: 0.9rem;
 	color: #0C0C0C;
+	background: #FEFEFE;
 
 }
 
@@ -103,25 +104,139 @@ body {
 
 }
 
-.post .content p, .post .content blockquote, .archive article p {
+.content h1, .content h2, .content p, .content ol, .content ul, .content li, .content  blockquote, .archive article p {
 
 	line-height: 1.75;
 	letter-spacing: 0.01rem;
 
 }
 
-.post .content p, .highlight {
+.content h1, .content h2, .content p, .content ol, .content ul, .content table, .content .MathJax_Display, .highlight {
 
 	margin-bottom: 30px;
 
 }
 
-.post .content blockquote {
+.content h1, .footnotes:before {
+
+    font-size: 1.2rem;
+    font-weight: 700;
+
+}
+
+.content h2 {
+
+    font-size: 1rem;
+    font-weight: 700;
+
+}
+
+.content ol, .content ul {
+
+    list-style-position: outside;
+    margin-left: 45px;
+
+}
+
+.content blockquote {
 	
 	border-left: 1px solid #D8D8D8;
 	padding-left: 15px;
 	font-style: italic;
 	
+}
+
+.content table, .content td, .content th {
+
+    border-spacing: 0;
+    padding: 0;
+    border-collapse: collapse;
+}
+
+.content table {
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.content td, .content th {
+
+    text-align: center;
+    font-weight: 400;
+    padding: 5px 10px;
+
+}
+
+.content td {
+
+    border-color: #D8D8D8;
+
+}
+
+.content th {
+
+    border-color: #404040;
+
+}
+
+.content td, .content th, .border-bottom { 
+
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+
+}
+
+td.no-border-bottom, th.no-border-bottom {
+
+    border-bottom-width: 0;
+
+}
+
+.border-left {
+
+    border-left-width: 1px;
+    border-left-style: solid;
+
+}
+
+.border-right {
+
+    border-right-width: 1px;
+    border-right-style: solid;
+
+}
+
+.border-top {
+
+    border-top-width: 1px;
+    border-top-style: solid;
+
+}
+
+.MathJax span {
+
+    color: #0C0C0C;
+
+}
+
+.footnotes {
+
+    padding-top: 30px;
+    border-top: 1px solid #D8D8D8;
+
+}
+
+.footnotes ol {
+
+    margin-top: 20px;
+
+}
+
+.footnotes:before {
+
+    content: 'Footnotes';
+
 }
 
 .archive {
@@ -188,5 +303,21 @@ body {
 .archive .content code {
 
 	display: none;
+
+}
+
+.highlight {
+
+	border-left: 1px solid #D8D8D8;
+	padding-left: 10px;
+
+}
+
+.highlight .lineno { 
+
+	border-right: 1px solid #D8D8D8; 
+	padding-right: 10px; 
+	margin-right: 5px;
+	color: #404040 
 
 }
