@@ -136,7 +136,13 @@ header.main .social a {
 
 }
 
-.content h1, .footnotes:before {
+.content h1, .content h2 {
+
+    font-family: 'Droid Sans', 'Lucida Sans', Geneva, Verdana, sans-serif;
+
+}
+
+.content h1 {
 
     font-size: 1.2rem;
     font-weight: 700;
@@ -247,20 +253,9 @@ td.no-border-bottom, th.no-border-bottom {
 
 .footnotes {
 
+    margin-top: 40px;
     padding-top: 30px;
     border-top: 1px solid #D8D8D8;
-
-}
-
-.footnotes ol {
-
-    margin-top: 20px;
-
-}
-
-.footnotes:before {
-
-    content: 'Footnotes';
 
 }
 
