@@ -1,0 +1,112 @@
+* {
+
+	padding: 0;
+	margin: 0;
+	border: 0;
+
+}
+
+body {
+
+	font-family: Arial, sans-serif;
+	color: #333;
+
+}
+
+.page {
+
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	background: #fff;
+
+}
+
+video {
+
+	width: 100%;
+	height: 100%;
+
+}
+
+video#bg {
+
+	background-color: #000;
+
+}
+
+#overlay {
+
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+}
+
+#overlay .column {
+
+	width: 25%;
+	height: 100%;
+	background: #000;
+	float: left;
+	opacity: 0.9;
+
+}
+
+#overlay .column:nth-child(2) {
+
+	width: 50%;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-image: url(../image/title.png);
+	background-image: url(../image/title.svg);
+	
+}
+
+.page .hoverFit {
+
+	width: 100%;
+	display: block;
+	margin-top: 0;
+	margin-left: 0;
+	margin-right: auto;
+	float: left;
+	
+}
+
+.page:nth-child(odd) .hoverFit {
+
+	margin-left: auto;
+	margin-right: 0;
+	float: right;
+
+}
+
+.description {
+
+	display: none;
+	float: left;
+	padding: 20px;
+
+}
+
+.description h1 {
+
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 4em;
+	font-stretch: condensed;
+	line-height: 1em;
+	margin-bottom: 40px;
+
+}
+
+.description p {
+
+	font-size: 1.2em;
+
+}

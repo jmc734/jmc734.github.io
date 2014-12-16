@@ -1,0 +1,310 @@
+<!doctype html>
+<html>
+
+	<head>
+    
+        <title>Jacob McDonald - Portfolio</title>
+	
+		<link rel="stylesheet" type="text/css" href="asset/css/main.css">
+	
+	</head>
+	
+	<body>
+	
+		<div class="page">
+	
+			<video id="bg" width="1280" height="670" preload="auto" autoplay loop muted>
+			
+				<source src="asset/video/bg.mp4" type="video/mp4">
+				<source src="asset/video/bg.webm" type="video/webm">
+				<source src="asset/video/bg.ogg" type="video/ogg">
+				<img src="asset/image/bg.png" width="1280" height="670">
+			
+			</video>
+			
+			<div id="overlay">
+			
+				<div class="column"></div>
+				<div class="column"></div>
+				<div class="column"></div>
+			
+			</div>
+		
+		</div>
+		
+		<div class="page" id="collage">
+		
+			<img class="hoverFit" src="asset/image/collage.png">
+			
+			<div class="description">
+			
+				<h1>Personal Asthetic Collage</h1>
+				
+				<p>This is a description of the image</p>
+			
+			</div>
+			
+		</div>
+		
+		<div class="page" id="infographic">
+		
+			<img class="hoverFit" src="asset/image/mptee.png">
+			
+			<div class="description">
+			
+				<h1>MP-Tee</h1>
+				
+				<p>This is a description of the image</p>
+			
+			</div>
+		
+		</div>
+		
+		<div class="page" id="mptee">
+		
+			<img class="hoverFit" src="asset/image/mptee.png">
+			
+			<div class="description">
+			
+				<h1>MP-Tee</h1>
+				
+				<p>This is a description of the image</p>
+			
+			</div>
+		
+		</div>
+	
+		<script type="text/javascript" src="asset/js/jquery.min.js"></script>
+		<script type="text/javascript">
+			
+			var SCROLL_DURATION = 450;
+			
+			var scrollingTo = -1;
+			var collageIn = false;
+			
+			function resizeVideo(v) {
+			
+				var ww = $(window).width();
+				var wh = $(window).height();
+				var wr = ww / wh;
+				
+				var vw = v.videoWidth;
+				var vh = v.videoHeight;
+				var vr = vw / vh;
+				
+				if(wr >= vr){
+				
+					vw = ww;
+					vh = vw / vr;
+					mt = (wh - vh) / 2;
+					ml = 0;
+				
+				} else {
+				
+					vh = wh;
+					vw = vh * vr;
+					mt = 0;
+					ml = (ww - vw) / 2;
+				
+				}
+				
+				v = $(v);
+				v.width(vw);
+				v.height(vh);
+				v.css('margin-top', mt);
+				v.css('margin-left', ml); 
+			
+			}
+			
+			function getCurrentPage(roundingFunc) {
+			
+				var pos = $(document).scrollTop();
+				var height = $(window).height();
+				
+				return roundingFunc(pos / height);
+			
+			}
+			
+			function scrollToPage(page) {
+			
+				if(page !== scrollingTo){
+					
+					$('body').stop();
+					
+					scrollingTo = page;
+			
+					var height = $(window).height();
+					var pos = $(document).scrollTop();
+					var newPos = height * page;
+					var duration = Math.abs(newPos - pos) / height * SCROLL_DURATION;
+					
+					$('body').animate({
+					
+						scrollTop: newPos
+						
+					}, duration, function() {
+					
+						var id = $('.page:nth('+scrollingTo+')').attr('id');
+						
+						if(id){
+						
+							window.location.hash = id;
+					
+						} else {
+						
+							window.location.hash = '';
+						
+						}
+					
+						scrollingTo = -1;
+					
+					});
+					
+				}
+ 
+			}
+			
+			function scrollDown() {
+				
+				var pageCount = $('.page').length;
+				var newPage = getCurrentPage(Math.floor) + 1;
+				newPage = newPage < pageCount ? newPage : pageCount - 1;
+				
+				scrollToPage(newPage);
+			
+			}
+			
+			function scrollUp() {
+			
+				var newPage = getCurrentPage(Math.ceil) - 1;
+				newPage = newPage >= 0 ? newPage : 0;
+				
+				scrollToPage(newPage);
+			
+			}
+			
+			function fitImageToPage(img) {
+			
+				var w = $(window).width();
+				var h = $(window).height();
+				
+				img = $(img);
+				img.css('width', w);
+				img.css('height', w);
+				img.css('margin-top', (h - w) / 2);
+			
+			}
+			
+			function animateImagePage(page, hovered) {
+			
+				var w = $(window).width();
+				var h = $(window).height();
+				
+				if(hovered) {
+				
+					$('.hoverFit', page)
+						.stop()
+						.animate({
+							'width': h,
+							'height': h,
+							'margin-top': 0
+						}, 500, function(){
+							$('.description', page)
+								.css('width', w - h - 40)
+								.fadeIn(200);
+						});
+				
+				} else {
+				
+					$('.description', page).fadeOut(200, function(){
+				
+						$('.hoverFit', page)
+							.stop()
+							.animate({
+								'width': w,
+								'height': w,
+								'margin-top': (h - w) / 2
+							}, 500);
+						
+					});
+				
+				}
+			
+			}
+		
+			$(function() {
+			
+				$('video#bg').bind("loadedmetadata", function(){
+					
+					resizeVideo(this);
+					
+				});
+			
+				$(document).keydown(function(e) {
+					
+					var code = e.keyCode ? e.keyCode : e.which;
+					
+					if(code >= 37 && code <= 40){
+						
+						if(code === 37 || code === 38){
+						
+							page = scrollUp();
+						
+						} else {
+						
+							page = scrollDown();
+						
+						}
+					
+						return false;
+					
+					}
+					
+				});
+				
+				$(window).resize(function(){
+			
+					resizeVideo($('video#bg')[0]);
+					
+					$('.hoverFit').each(function(x){
+						
+						fitImageToPage(this);
+						
+					});
+					
+				});
+				
+				$('.hoverFit').each(function(x){
+						
+					fitImageToPage(this);
+					
+				});
+				
+				$('.page').hover(function(){
+					
+					animateImagePage(this, true);
+			
+				}, function(){
+				
+					animateImagePage(this, false);
+				
+				});
+				
+			});
+			
+		</script>
+	
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-57641059-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+    
+	</body>
+
+<html>
