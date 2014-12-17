@@ -130,7 +130,7 @@ header.main .social a {
 
 }
 
-.content h1, .content h2, .content p, .content ol, .content ul, .content table, .content .MathJax_Display, .highlight {
+.content h1, .content h2, .content p, .content ol, .content ul, .content table, .content hr, .content .MathJax_Display, .highlight {
 
 	margin-bottom: 30px;
 
@@ -153,6 +153,15 @@ header.main .social a {
 
     font-size: 1rem;
     font-weight: 700;
+
+}
+
+.content hr {
+
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #D8D8D8;
 
 }
 
@@ -236,6 +245,12 @@ td.no-border-bottom, th.no-border-bottom {
 
     border-top-width: 1px;
     border-top-style: solid;
+
+}
+
+.no-border {
+
+    border: none !important;
 
 }
 
@@ -339,5 +354,27 @@ td.no-border-bottom, th.no-border-bottom {
 	padding-right: 10px; 
 	margin-right: 5px;
 	color: #404040 
+
+}
+
+.figure {
+
+    text-align: center;
+    margin: 20px 0;
+    padding-top: 30px;
+
+}
+
+.post .figure {
+
+    border: 1px solid #D8D8D8;
+    border-left: none;
+    border-right: none;
+
+}
+
+.figure .content {
+
+    display: inline;
 
 }

@@ -1,0 +1,11 @@
+<div class="figure{% if include.no-border %} no-border{% endif %}"{% if include.id %} id="{{ include.id }}"{% endif %}>
+
+    <span class="content">
+        {{ include.content | markdownify }}
+    </span>
+
+    <span class="caption">
+        {{ include.caption | markdownify }}
+    </span>
+    
+</div>
