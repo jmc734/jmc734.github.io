@@ -335,7 +335,7 @@ td.no-border-bottom, th.no-border-bottom {
 	
 }
 
-.archive .content code {
+.archive .content pre code {
 
 	display: none;
 
