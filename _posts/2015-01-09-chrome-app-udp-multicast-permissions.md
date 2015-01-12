@@ -3,6 +3,7 @@ layout: 	post
 title:      "Chrome App UDP Multicast Permissions"
 subtitle:   "Adhoc Documentation"
 categories:	javascript
+published:	false
 ---
 
 Now that the `chrome.socket` API has been deprecated, you should now be using `chrome.sockets.tcp`, `chrome.sockets.tcpServer`, and `chrome.sockets.udp`. With this change comes a change in how you give your app networking permissions in your manifest file. <!-- more -->Previously, if you wanted to allow your app to make a UDP sendTo(), your manifest file would look something like this:
