@@ -87,28 +87,65 @@ video#bg {
 }
 
 .description {
-
-	display: none;
 	float: left;
 	padding: 20px;
 
 }
 
-.description h1 {
+.imagePage .description {
+
+    display: none;
+
+}
+
+.description h1, .description h2, .description h3 {
 
 	text-transform: uppercase;
 	font-weight: bold;
-	font-size: 4em;
 	font-stretch: condensed;
 	line-height: 1em;
+    font-size: 4em;
 	margin-bottom: 40px;
 
 }
 
-.description p {
+.description h2 {
 
-	font-size: 1.2em;
+    font-size: 2em;
+    margin-bottom: 20px;
+
+}
+
+.description h3 {
+
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 5px;
+
+}
+
+.description ul, .description ol {
+
+    list-style-position: inside;
+
+}
+
+.description p, .description li {
+
+	font-size: 1em;
     line-height: 1.5;
     margin-bottom: 10px;
+
+}
+
+.description th, .description td {
+
+    padding: 0 40px 0 0;
+
+}
+
+.description th {
+
+    text-align: left;
 
 }

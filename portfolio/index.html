@@ -32,7 +32,7 @@
 		
 		</div>
 		
-		<div class="page" id="collage">
+		<div class="page imagePage" id="collage">
 		
 			<img class="hoverFit" src="asset/image/collage.jpg">
 			
@@ -45,8 +45,134 @@
 			</div>
 			
 		</div>
+        
+        <div class="page imagePage" id="artifact_1">
 		
-		<div class="page" id="mptee">
+			<img class="hoverFit" src="asset/image/artifact_1.jpg">
+			
+			<div class="description">
+			
+				<h1>The Men's Wallet</h1>
+                
+                <h2>Artifact Analysis: Typical Characteristics</h2>
+
+			</div>
+			
+		</div>
+        
+        <div class="page imagePage" id="artifact_2">
+		
+			<img class="hoverFit" src="asset/image/artifact_2.jpg">
+			
+			<div class="description">
+			
+				<h1>The Men's Wallet</h1>
+                
+                <h2>Artifact Analysis: Historical Context</h2>
+			
+			</div>
+			
+		</div>
+        
+        <div class="page imagePage" id="artifact_3">
+		
+			<img class="hoverFit" src="asset/image/artifact_3.jpg">
+			
+			<div class="description">
+			
+				<h1>The Men's Wallet</h1>
+                
+                <h2>Artifact Analysis: Usage</h2>
+			
+			</div>
+			
+		</div>
+        
+        <div class="page" id="arifact_analysis">
+			
+			<div class="description">
+			
+				<h1>The Men's Wallet</h1>
+                
+                <h2>Artifact Analysis</h2>
+                
+                <p>Based on my above analyses, it can be concluded that of the three main use cases for a wallet, two of the three have been mostly supplanted by the smartphone.</p>
+                
+                <p>Cash, at least in the United States, is largely unused. Credit and debit cards are used for the vast majority of transactions. Therefore, the emerging credit card replacement functionality of smartphones will likely replace the monetary aspects of a wallet.</p> 
+                
+                <p>As for the sentimental items, a smartphone works tremendously well at capturing and displaying video, audio, photos, and text. The only thing that it cannot capture is the physical. The contents and a photo of a note written by your young child can be stored in your phone but the physical note itself obviously cannot. The physical aspect of sentimentality should not be underestimated.</p>
+                
+                <p>The remaining use case is for storing and transporting identification. This would include items driver's licenses, passports, or acess cards. While some establishments have switch to smartphone based access control systems, this still leaves government ID and legacy access cards.</p>
+                
+                <p>For these reasons, I don't believe that smartphones will completely supplant the wallet in the near future, though as legacy systems are replaced and our concept of sentimentality changes, it will become more viable.</p>
+                
+            </div>
+            
+        </div>
+        
+        <div class="page" id="mp3_reimagined">
+			
+			<div class="description">
+			
+				<h1>Reimagining the MP3 Player</h1>
+
+                <table>
+                    <tr>
+                        <th><h2>Analysis</h2></th>
+                        <th><h2>Product Ideas</h2></th>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <h3>What is it for?</h3>
+
+                            <p>Listening to a catalog of music anywhere.</p>
+
+                            <h3>What can it do?</h3>
+                            
+                            <p><ul>
+                                <li>Store music in a digital format</li>
+                                <li>Play back stored music</li>
+                                <li>Organize the stored music</li>
+                                <li>All of the above using battery-power</li>
+                            </ul></p>
+                            
+                            <h3>How do you interact with it?</h3>
+                            
+                            <p>Interaction with the device is done usually through three possible media:
+                            
+                            <ul>
+                                <li>Direct interaction with electromechanical transducers such as buttons, switches, and sliders.</li>
+                                <li>Interaction with a dynamic, virtual interface via a touchscreen.</li>
+                                <li>Interaction with another device that then communicates those interactions with the device via wireless or wired channels. For example, using a button on a Bluetooth headset or on the cord of a wired headset.</li>
+                            </ul></p>
+
+                            <h3>In what context do you use it?</h3>
+
+                            <p>The primary context for the use of an MP3 player is when the user is away from their home stereo system, computer, television, and other fixed (larger, heavier, permanent, etc.) playback devices but would like to listen to music.</p>
+                        </td>
+                        <td valign="top">
+                            
+                            <h3>Direct Brain Stimulus</h3>
+                            
+                            <p>For users who are hearing impaired or completely deaf, a device, not necessary solely for music playback, could either be implanted to directly stimulate the brain tissue or be fixed to the outside of the skull and stimulate the tissue remotely.</p>
+
+                            <h3>Permanent Earpiece for Virtual Reality</h3>
+                            
+                            <p>An earpiece could be work permanently in the ear to allow for manipulation of all sound entering the ear canal. This could not only facilitate media playback but also full-scale virtual reality using the audioscape the user is in.</p>
+
+                            <h3>Drone</h3>
+                            
+                            <p>A drone with a speaker mounted on it could follow you around and playback music.</p>
+                        </td>
+                    </tr>
+                </table>
+
+			
+			</div>
+			
+		</div>
+		
+		<div class="page imagePage" id="mptee">
 		
 			<img class="hoverFit" src="asset/image/mptee.png">
 			
@@ -62,7 +188,7 @@
 		
 		</div>
 		
-		<div class="page" id="infographic">
+		<div class="page imagePage" id="infographic">
 		
 			<img class="hoverFit" src="asset/image/infographic.jpg">
 			
@@ -197,40 +323,44 @@
 			
 			}
 			
-			function animateImagePage(page, hovered) {
-			
-				var w = $(window).width();
-				var h = $(window).height();
+			function animateImagePage(page, hovered){
 				
-				if(hovered) {
-				
-					$('.hoverFit', page)
-						.stop()
-						.animate({
-							'width': h,
-							'height': h,
-							'margin-top': 0
-						}, 500, function(){
-							$('.description', page)
-								.css('width', w - h - 40)
-								.fadeIn(200);
-						});
-				
-				} else {
-				
-					$('.description', page).fadeOut(200, function(){
-				
-						$('.hoverFit', page)
-							.stop()
-							.animate({
-								'width': w,
-								'height': w,
-								'margin-top': (h - w) / 2
-							}, 500);
-						
-					});
-				
-				}
+                if($(page).hasClass('imagePage')){
+                
+                    var w = $(window).width();
+                    var h = $(window).height();
+                
+                    if(hovered) {
+                    
+                        $('.hoverFit', page)
+                            .stop()
+                            .animate({
+                                'width': h,
+                                'height': h,
+                                'margin-top': 0
+                            }, 500, function(){
+                                $('.description', page)
+                                    .css('width', w - h - 40)
+                                    .fadeIn(200);
+                            });
+                    
+                    } else {
+                    
+                        $('.description', page).fadeOut(200, function(){
+                    
+                            $('.hoverFit', page)
+                                .stop()
+                                .animate({
+                                    'width': w,
+                                    'height': w,
+                                    'margin-top': (h - w) / 2
+                                }, 500);
+                            
+                        });
+                    
+                    }
+                    
+                }
 			
 			}
 		
