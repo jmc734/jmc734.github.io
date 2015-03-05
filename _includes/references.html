@@ -1,0 +1,11 @@
+<div class="references{% if include.no-border %} no-border{% endif %}"{% if include.id %} id="{{ include.id }}"{% endif %}>
+    
+    {% if include.heading %}
+        {{ include.heading | markdownify }}
+    {% else %}
+        {{ "#References" | markdownify }}
+    {% endif %}
+    
+    {{ include.content | markdownify }}
+    
+</div>
