@@ -11,7 +11,7 @@ Reading through [1] as a novice, a lot of the concepts discussed were completely
 
 > It is interesting to note that experience indicates that modulation of crossover scale is more effective than modulation of fractal dimension for modelling realistic looking terrain. That changing crossover scale alone should have such a dramatic effect is not surprising, for as B. B. Mandelbrot has pointed out, the fractal dimension of the Himalayas is approximately the same as that of the runway at the JFK airport; what is true is simply that the crossover scale of the latter is on the order of millimeters while that of the former is on the order of kilometers. [1]
 
-This was towards the end of a section about generating fractal height fields and is a response to some preliminary results gotten by modulating either the fractal dimension or crossover scale. For the uninitiated, let's start with some definitions. Crossover scale is explained well by this passage from earlier in [1]:
+This was towards the end of a section about generating fractal height fields and is a response to some preliminary results gotten by modulating either the fractal dimension or crossover scale. For the uninitiated, let's start with some definitions. <!-- more -->Crossover scale is explained well by this passage from earlier in [1]:
 
 > A fractal surface changes in character depending on whether it is observed from nearby or from far away. From far away it appears flat or smooth (as the Earth seen from space). The transition from "nearby" to "far away" appearances occurs at the **crossover scale** which is the scale where vertical and horizontal displacements are equal. Thus, for a mountain range rising within one kilometer from sea level to peaks which are, one kilometer high, the **crossover scale** is one kilometer. [1] 
 
@@ -59,8 +59,8 @@ Plate 4 looks fairly similar to a natural ridge while Plate 6 starts on the left
 
 {% capture refs %}
 1. F. K. Musgrave, C. E. Kolb and R. S. Mace, "The synthesis and rendering of eroded fractal terrains," SIGGRAPH Comput. Graph., vol. 23, no. 3, pp. 41-50, 1989. 
-2. R. L. Devaney, "Fractal Dimension," 2 April 1995. [Online]. Available: http://math.bu.edu/DYSYS/chaos-game/node6.html. [Accessed 5 March 2015].
-3. Wxs, "Wikimedia Commons, Koch Flake," 6 April 2007. [Online]. Available: https://commons.wikimedia.org/wiki/File:KochFlake.svg. [Accessed 5 March 2015].
+2. R. L. Devaney, "Fractal Dimension," 2 April 1995. [Online]. Available: [http://math.bu.edu/DYSYS/chaos-game/node6.html](http://math.bu.edu/DYSYS/chaos-game/node6.html). [Accessed 5 March 2015].
+3. Wxs, "Wikimedia Commons, Koch Flake," 6 April 2007. [Online]. Available: [https://commons.wikimedia.org/wiki/File:KochFlake.svg](https://commons.wikimedia.org/wiki/File:KochFlake.svg). [Accessed 5 March 2015].
 {% endcapture %}
  
 {% include references.html content=refs %}
