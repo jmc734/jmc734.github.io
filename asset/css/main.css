@@ -3,6 +3,10 @@
 	padding: 0;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
 
 	font-family: 'Merriweather', Georgia, Cambria, 'Times New Roman', Times, serif;
@@ -11,6 +15,24 @@ body {
 	color: #0C0C0C;
 	background: #FEFEFE;
 
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+    margin: 0 auto -100px;
+}
+
+footer {
+    height: 100px;
+    position: relative;
+}
+
+.copyright {
+    color: #D8D8D8;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
 }
 
 header.main a {
@@ -68,7 +90,7 @@ header.main .social a {
 
 }
 
-.timeline li a, .archive .group .name a {
+.timeline li a, .archive .group .name a{
 	
 	display: block;
 	text-decoration: none;
@@ -96,6 +118,7 @@ header.main .social a {
 	width: 50%;
 	min-width: 720px;
 	margin: 0 auto;
+    padding-bottom: 100px;
 
 }
 
